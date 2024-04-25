@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import TextFrom from './components/TextFrom';
 import Alert from './components/Alert';
 import About from './components/About';
-import {Router,Route,Routes} from "react-router-dom";
+import {BrowserRouter as Router,Route,Routes, BrowserRouter} from "react-router-dom";
 
 function App() {
    const [mode, setmode] = useState('light'); //whether dark mode isenble not
@@ -35,17 +35,18 @@ function App() {
     }
   }
   return (
-    <Router>
+
+     <Router> 
         <Navbar title="Textutils" abouttext="About us" mode={mode} toggleMode={toggleMode}/>
         <Alert alert={alert}/>
       <Routes>
-      <div className='container my-3'>
+      
         <Route path='/About' element={<About/>}></Route>
-        <Route path='/TextFrom' element={<TextFrom showalert={showalert} heading="Enter the text to analyes below" mode={mode}/>}></Route>
-        </div>
+        <Route path='/' element={<TextFrom showalert={showalert} heading="Enter the text to analyes below" mode={mode}/>}></Route>
+        
       </Routes>
-    </Router>
-  
+     </Router> 
+ 
   );
 }
 
