@@ -41,8 +41,8 @@ function App() {
         <Alert alert={alert}/>
       <Routes>
       
-        <Route path='/About' element={<About/>}></Route>
-        <Route path='/' element={<TextFrom showalert={showalert} heading="Enter the text to analyes below" mode={mode}/>}></Route>
+        <Route path='/About' element={<About  mode={mode}/>}></Route>
+        <Route path='/' element={<TextFrom showalert={showalert} heading="Try TextUtils - word counter, character counter, remove extra spaces " mode={mode}/>}></Route>
         
       </Routes>
      </Router> 
